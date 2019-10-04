@@ -18,6 +18,12 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 axios.get("https://lambda-times-backend.herokuapp.com/articles").then(r=> createArticle(r)).catch(error => console.log(error));
+
 function createArticle(response){
+    const card;
+    const headline;
+    const author;
+    const imgContainer;
+    const img;
     console.log(response);
 }
