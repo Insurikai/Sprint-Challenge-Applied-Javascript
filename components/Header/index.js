@@ -9,4 +9,9 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+function Header() {
+    const header = document.querySelector(".header-container").appendChild(document.createElement("div"));
+    temp.textContent = "98°";
+    console.log(header);
+}
+Header();
