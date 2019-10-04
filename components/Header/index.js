@@ -14,6 +14,8 @@ function Header() {
     header.classList.add("header");
     const date = header.appendChild(document.createElement("span"));
     date.classList.add("date");
+    date.textContent = "SMARCH 28, 2019";
+    header.appendChild(document.createElement("h1")).textContent = "Lambda Times";
     console.log(header);
 }
 Header();
