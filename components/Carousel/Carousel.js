@@ -17,3 +17,42 @@
     <div class="right-button"> > </div>
   </div>
 */
+/* Banner fix */
+document.querySelector(".top-bar").style.zIndex = "1";
+/* End Banner fix */
+
+let index = 0;
+const parent = document.querySelector(".carousel-container").appendChild(document.createElement("div"));
+parent.classList.add("carousel");
+const leftButton = parent.appendChild(document.createElement("div"));
+leftButton.classList.add("left-button");
+leftButton.textContent = " < ";
+const images = [];
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images[0].src = "./assets/carousel/mountains.jpeg";
+images[1].src = "./assets/carousel/computer.jpeg";
+images[2].src = "./assets/carousel/trees.jpeg";
+images[3].src = "./assets/carousel/turntable.jpeg";
+const rightButton = parent.appendChild(document.createElement("div"));
+rightButton.classList.add("right-button");
+rightButton.textContent = " > ";
+
+function showImg(){
+  if (index < 0) {
+    index = images.length-1;
+  }else if(index >= images.length){
+    index = 0; 
+  }
+  images.forEach(img=> img.removeAttribute("style"));
+  images[index].style.display = "flex";
+}
+leftButton.addEventListener('click', e => {
+	showImg(--index);
+},false);
+rightButton.addEventListener('click', e => {
+	showImg(++index);
+},false);
+showImg(0);
