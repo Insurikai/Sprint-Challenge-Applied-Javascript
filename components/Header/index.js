@@ -16,6 +16,9 @@ function Header() {
     date.classList.add("date");
     date.textContent = "SMARCH 28, 2019";
     header.appendChild(document.createElement("h1")).textContent = "Lambda Times";
+    const temp = header.appendChild(document.createElement("span"));
+    temp.classList.add("temp");
+    temp.textContent = "98°";
     console.log(header);
 }
 Header();
