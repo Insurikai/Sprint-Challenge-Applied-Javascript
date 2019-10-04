@@ -20,10 +20,11 @@
 axios.get("https://lambda-times-backend.herokuapp.com/articles").then(r=> createArticle(r)).catch(error => console.log(error));
 
 function createArticle(response){
-    const card;
-    const headline;
-    const author;
-    const imgContainer;
-    const img;
+    const card = document.createElement("div");
+    const headline = card.appendChild(document.createElement("div"));
+    const author = card.appendChild(document.createElement("div"));
+    const imgContainer = author.appendChild(document.createElement("div"));
+    const img = imgContainer.appendChild(document.createElement("img"));
+    author.appendChild(document.createElement("span"));
     console.log(response);
 }
