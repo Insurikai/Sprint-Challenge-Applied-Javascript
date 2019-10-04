@@ -21,9 +21,13 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles").then(r=> create
 
 function createArticle(response){
     const card = document.createElement("div");
+    card.classList.add("card");
     const headline = card.appendChild(document.createElement("div"));
+    headline.classList.add("headline");
     const author = card.appendChild(document.createElement("div"));
+    author.classList.add("author");
     const imgContainer = author.appendChild(document.createElement("div"));
+    imgContainer.classList.add("img-container");
     const img = imgContainer.appendChild(document.createElement("img"));
     author.appendChild(document.createElement("span"));
     console.log(response);
