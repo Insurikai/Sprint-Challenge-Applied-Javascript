@@ -19,6 +19,5 @@ function Header() {
     const temp = header.appendChild(document.createElement("span"));
     temp.classList.add("temp");
     temp.textContent = "98°";
-    console.log(header);
 }
 Header();
