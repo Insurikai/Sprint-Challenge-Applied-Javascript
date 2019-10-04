@@ -55,3 +55,4 @@ leftButton.addEventListener('click', e => {
 rightButton.addEventListener('click', e => {
 	showImg(++index);
 },false);
+showImg(0);
