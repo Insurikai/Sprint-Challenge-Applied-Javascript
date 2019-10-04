@@ -17,19 +17,34 @@
     <div class="right-button"> > </div>
   </div>
 */
-function createCarousel(){
-  const parent = document.querySelector(".carousel-container").appendChild(document.createElement("div"));
-  parent.classList.add("carousel");
-  const leftButton = parent.appendChild(document.createElement("div"));
-  leftButton.classList.add("left-button");
-  leftButton.textContent = " < ";
-  parent.appendChild(document.createElement("img")).src = "./assets/carousel/mountains.jpeg";
-  parent.appendChild(document.createElement("img")).src = "./assets/carousel/computer.jpeg";
-  parent.appendChild(document.createElement("img")).src = "./assets/carousel/trees.jpeg";
-  parent.appendChild(document.createElement("img")).src = "./assets/carousel/turntable.jpeg";
-  const rightButton = parent.appendChild(document.createElement("div"));
-  rightButton.classList.add("right-button");
-  rightButton.textContent = " > ";
-  return parent;
+/* Banner fix */
+document.querySelector(".top-bar").style.zIndex = "1";
+/* End Banner fix */
+
+let index = 0;
+const parent = document.querySelector(".carousel-container").appendChild(document.createElement("div"));
+parent.classList.add("carousel");
+const leftButton = parent.appendChild(document.createElement("div"));
+leftButton.classList.add("left-button");
+leftButton.textContent = " < ";
+const images = [];
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images.push(parent.appendChild(document.createElement("img")));
+images[0].src = "./assets/carousel/mountains.jpeg";
+images[1].src = "./assets/carousel/computer.jpeg";
+images[2].src = "./assets/carousel/trees.jpeg";
+images[3].src = "./assets/carousel/turntable.jpeg";
+const rightButton = parent.appendChild(document.createElement("div"));
+rightButton.classList.add("right-button");
+rightButton.textContent = " > ";
+
+function showImg(newIndex){
+  console.log('before',newIndex);
+  if (newIndex < 0) { newIndex = images.length-1; }else if(newIndex >= images.length){ newIndex = 0; }
+  index = newIndex;
+  console.log('after',newIndex);
+  images.forEach(img=> img.removeAttribute("style"));
+  images[index].style.display = "flex";
 }
-console.log(createCarousel());
