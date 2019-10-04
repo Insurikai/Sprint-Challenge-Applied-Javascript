@@ -40,11 +40,18 @@ const rightButton = parent.appendChild(document.createElement("div"));
 rightButton.classList.add("right-button");
 rightButton.textContent = " > ";
 
-function showImg(newIndex){
-  console.log('before',newIndex);
-  if (newIndex < 0) { newIndex = images.length-1; }else if(newIndex >= images.length){ newIndex = 0; }
-  index = newIndex;
-  console.log('after',newIndex);
+function showImg(){
+  if (index < 0) {
+    index = images.length-1;
+  }else if(index >= images.length){
+    index = 0; 
+  }
   images.forEach(img=> img.removeAttribute("style"));
   images[index].style.display = "flex";
 }
+leftButton.addEventListener('click', e => {
+	showImg(--index);
+},false);
+rightButton.addEventListener('click', e => {
+	showImg(++index);
+},false);
