@@ -14,5 +14,19 @@ function createTabs(topics){
         const tab = document.querySelector(".topics").appendChild(document.createElement("div"));
         tab.classList.add("tab");
         tab.textContent = topic;
+        //Stretch Stuff
+        // Add an event listener for clicks which toggles the tab and filters
+        //Test 1 Event listener for toggle on and one for toggle off
+        tab.addEventListener('click', toggleOn,false);
     });
+}
+function toggleOn(event){
+    event.stopPropogation;
+    event.target.removeEventListener('click', toggleOn, false);
+    event.target.addEventListener('click', toggleOff,false);
+}
+function toggleOff(){
+    event.stopPropogation;
+    event.target.removeEventListener('click', toggleOff, false);
+    event.target.addEventListener('click', toggleOn,false);
 }
