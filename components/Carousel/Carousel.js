@@ -20,6 +20,12 @@
 function createCarousel(){
   const parent = document.querySelector(".carousel-container").appendChild(document.createElement("div"));
   parent.classList.add("carousel");
+  const leftButton = parent.appendChild(document.createElement("div"));
+  leftButton.classList.add("left-button");
+  leftButton.textContent = " < ";
+  const rightButton = parent.appendChild(document.createElement("div"));
+  rightButton.classList.add("right-button");
+  rightButton.textContent = " > ";
   return parent;
 }
 console.log(createCarousel());
