@@ -23,6 +23,10 @@ function createCarousel(){
   const leftButton = parent.appendChild(document.createElement("div"));
   leftButton.classList.add("left-button");
   leftButton.textContent = " < ";
+  parent.appendChild(document.createElement("img")).src = "./assets/carousel/mountains.jpeg";
+  parent.appendChild(document.createElement("img")).src = "./assets/carousel/computer.jpeg";
+  parent.appendChild(document.createElement("img")).src = "./assets/carousel/trees.jpeg";
+  parent.appendChild(document.createElement("img")).src = "./assets/carousel/turntable.jpeg";
   const rightButton = parent.appendChild(document.createElement("div"));
   rightButton.classList.add("right-button");
   rightButton.textContent = " > ";
