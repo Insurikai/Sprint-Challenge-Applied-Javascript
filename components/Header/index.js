@@ -11,7 +11,9 @@
 
 function Header() {
     const header = document.querySelector(".header-container").appendChild(document.createElement("div"));
-    temp.textContent = "98°";
+    header.classList.add("header");
+    const date = header.appendChild(document.createElement("span"));
+    date.classList.add("date");
     console.log(header);
 }
 Header();
